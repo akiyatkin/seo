@@ -3,7 +3,7 @@
 /*
 Карта сайта обновляется при клике и если файла вообще нет
 */
-use itlife\infrajs;
+use itlife\infrajs\Infrajs;
 
 function infrajs_seo_init(){//Делается при каждой пробежки
 	$store=&infrajs::store();
