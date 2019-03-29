@@ -1,3 +1,7 @@
 {
-    "name": "akiyatkin/seo"
+	"name":"akiyatkin/seo",
+	"require":{
+		"infrajs/config":"~1",
+		"infrajs/ans":"~1"
+	}
 }
