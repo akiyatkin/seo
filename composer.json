@@ -1,7 +1,3 @@
 {
-    "name": "itlife/seo",
-    "description": "plugin for infrajs",
-    "autoload": {
-        "psr-4": { "itlife\\seo\\": "/" }
-    }
+    "name": "akiyatkin/seo"
 }
