@@ -2,6 +2,7 @@
 	"name":"akiyatkin/seo",
 	"require":{
 		"infrajs/config":"~1",
+		"infrajs/excel":"~1",
 		"infrajs/ans":"~1"
 	}
 }

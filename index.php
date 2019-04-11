@@ -10,11 +10,13 @@ $path = '/'.$path;
 $conf = Config::get('seo');
 $data = Load::loadJSON('-excel/get/group/SEO/?src='.$conf['src']);
 $list = [];
-foreach ($data['data']['data'] as $v) {
-	if(empty($v['Адрес'])) continue;
-	$list[$v['Адрес']] = $v;
-	$list[$v['Адрес']]['external'] = $conf['common'];
-	unset($list[$v['Адрес']]['Адрес']);
+if ($data) {
+	foreach ($data['data']['data'] as $v) {
+		if(empty($v['Адрес'])) continue;
+		$list[$v['Адрес']] = $v;
+		$list[$v['Адрес']]['external'] = $conf['common'];
+		unset($list[$v['Адрес']]['Адрес']);
+	}
 }
 
 if (isset($list[$path])) {
