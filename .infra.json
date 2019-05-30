@@ -1,5 +1,5 @@
 {
 	"name":"akiyatkin/seo",
-	"common":"~pages/page.json",
+	"common":false,
 	"src":"~pages/Параметры.xlsx"
 }
