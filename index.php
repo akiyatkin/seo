@@ -23,7 +23,7 @@ if (!empty($data['data']['data'])) {
 	foreach ($data['data']['data'] as $item) {
 		if (empty($item['Адрес'])) continue;
 		$adr = Template::parse([$item['Адрес']], $layer);		
-		if (isset($list[$adr])) continue;
+		//if (isset($list[$adr])) continue;
 		$list[$adr] = $item;
 		if ($conf['common']) $list[$adr]['external'] = $conf['common'];
 		//unset($list[$adr]['Адрес']);
