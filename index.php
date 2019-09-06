@@ -4,6 +4,7 @@ use infrajs\ans\Ans;
 use infrajs\config\Config;
 use infrajs\template\Template;
 use infrajs\controller\Crumb;
+use infrajs\event\Event;
 use infrajs\layer\seojson\Seojson;
 
 
@@ -14,8 +15,11 @@ $conf = Config::get('seo');
 $data = Load::loadJSON('-excel/get/group/SEO/?src='.$conf['src']);
 $list = [];
 
-
-Crumb::change($path);
+$is = false;
+Event::handler('Controller.oninit', function () use(&$is){
+	$is = true;
+});
+if (!$is) Crumb::change($path);
 $crumb = Crumb::getInstance();
 $layer = array('crumb' => $crumb);
 
