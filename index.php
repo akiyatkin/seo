@@ -48,16 +48,10 @@ if (isset($list[$path])) {
 			if (empty($item[$prop])) continue;
 			$item[$prop] = Template::parse([$item[$prop]], $item['data'], null, $item['dataroot']);	
 		}
-		if (!empty($item['image_src'])) $item['image_src'] = Seojson::getSite().'/'.$item['image_src'];
 	}
-	//echo '<pre>';
-	//print_r($item);
-	//exit;
-	return Ans::ans($item);
-	
-	
+	if (!empty($item['image_src'])) $item['image_src'] = Seojson::getSite().'/'.$item['image_src'];
 
-	
+	return Ans::ans($item);
 } else {
 	if (!isset($list['/'])) {
 		$list['/'] = array('auto' => true);
