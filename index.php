@@ -40,17 +40,17 @@ if (isset($list[$path])) {
 	if (!empty($item['jsontpl'])) {
 		$item['json'] = Template::parse([$item['jsontpl']], $layer);
 	}
-
+	
 	if (!empty($item['json'])) {
 		$item['data'] = Load::loadJSON($item['json']);
 		if (empty($item['dataroot'])) $item['dataroot'] = null;
-		foreach(['description','keywords','title','image_src'] as $prop) {
+		foreach(['description','keywords','title','image_src','canonical'] as $prop) {
 			if (empty($item[$prop])) continue;
 			$item[$prop] = Template::parse([$item[$prop]], $item['data'], null, $item['dataroot']);	
 		}
 	}
 	if (!empty($item['image_src'])) $item['image_src'] = Seojson::getSite().'/'.$item['image_src'];
-
+	if (!empty($item['canonical'])) $item['canonical'] = Seojson::getSite().'/'.$item['canonical'];
 	return Ans::ans($item);
 } else {
 	if (!isset($list['/'])) {
