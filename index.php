@@ -51,6 +51,7 @@ if (isset($list[$path])) {
 	}
 	if (!empty($item['image_src'])) $item['image_src'] = Seojson::getSite().'/'.$item['image_src'];
 	if (!empty($item['canonical'])) $item['canonical'] = Seojson::getSite().'/'.$item['canonical'];
+	
 	return Ans::ans($item);
 } else {
 	if (!isset($list['/'])) {
