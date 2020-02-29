@@ -12,7 +12,7 @@ $path = Ans::GET('path','string','');
 $path = '/'.$path;
 
 $conf = Config::get('seo');
-$data = Load::loadJSON('-excel/get/group/SEO/?src='.$conf['src']);
+$data = Load::loadJSON('-excel/get/group/SEO/?src='.$conf['paramsrc']);
 $list = [];
 
 $is = false;
