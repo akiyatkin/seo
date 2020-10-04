@@ -3,6 +3,7 @@
 	"require":{
 		"infrajs/config":"~1",
 		"infrajs/excel":"~1",
-		"infrajs/ans":"~1"
+		"infrajs/ans":"~1",
+		"infrajs/layer-seojson":"~1"
 	}
 }
