@@ -48,9 +48,14 @@ if (isset($list[$path])) {
 			if (empty($item[$prop])) continue;
 			$item[$prop] = Template::parse([$item[$prop]], $item['data'], null, $item['dataroot']);	
 		}
+	} else {
+		foreach(['description','keywords','title','image_src','canonical'] as $prop) {
+			if (empty($item[$prop])) continue;
+			$item[$prop] = Template::parse([$item[$prop]], $layer);
+		}
 	}
 	if (!empty($item['image_src'])) $item['image_src'] = Seojson::getSite().'/'.$item['image_src'];
-	if (!empty($item['canonical'])) $item['canonical'] = Seojson::getSite().'/'.$item['canonical'];
+	if (isset($item['canonical'])) $item['canonical'] = Seojson::getSite().$item['canonical'];
 	
 	return Ans::ans($item);
 } else {
